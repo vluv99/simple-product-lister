@@ -1,11 +1,15 @@
 @import "tailwindcss";
+@import url('../../public/fonts/css/general-sans.css');
+
 @tailwind utilities;
 
 :root {
   --background: #F5F5F5;
   --foreground: #323232;
-  --accent: #6100FF;
-  --accent-text: #FFFFFF;
+}
+
+@theme {
+  --color-accent: #6100FF;
 }
 
 /* There is no dark mode planned for this project yet */
@@ -19,5 +23,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'GeneralSans-Regular', sans-serif;
 }
