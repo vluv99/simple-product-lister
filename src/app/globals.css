@@ -10,6 +10,7 @@
 
 @theme {
   --color-accent: #6100FF;
+  --text-large: 64px;
 }
 
 /* There is no dark mode planned for this project yet */
@@ -23,5 +24,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'GeneralSans-Regular', sans-serif;
+  font-family: 'GeneralSans-Variable', sans-serif;
 }
