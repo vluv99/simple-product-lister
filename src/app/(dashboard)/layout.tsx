@@ -6,8 +6,7 @@ type Props = {
 const DashboardLayout:FC<Props> = ({children}) => {
     return (
         <>
-            <h1 className='font-semibold text-[48px] text-center py-12.5'>See Products</h1>
-            <main className="flex justify-center">{children}</main>
+            <main className="flex flex-col justify-center max-w-[1268px] mx-auto">{children}</main>
         </>
     );
 };
