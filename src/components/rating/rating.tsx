@@ -21,8 +21,8 @@ export const Rating:FC<Props> = ({value}) => {
     }, [value])
 
     return (
-        <div className='flex flex-row'>
-            <div className='flex flex-row min-w-full'>
+        <div className='flex flex-row gap-4'>
+            <div className='flex flex-row gap-1'>
                 {stars.map((color, i) => <StarIcon color={color} key={`star-${i}`}/>)}
             </div>
             <div className='text-[24px] font-semibold text-[#000000]'>{value}</div>
