@@ -15,8 +15,8 @@
 /* There is no dark mode planned for this project yet */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--background);/*#0a0a0a;*/
+    --foreground: var(--foreground);/*#ededed;*/
   }
 }
 
