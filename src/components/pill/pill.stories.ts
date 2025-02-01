@@ -11,6 +11,7 @@ const meta = {
     tags: ['autodocs'],
     argTypes: {
         text: {control: 'text'},
+        variant: {control: 'text'},
     },
     args: { },
 } satisfies Meta<typeof Pill>;
@@ -18,8 +19,15 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
     args: {
         text: '-12.96%',
+    },
+};
+
+export const Big: Story = {
+    args: {
+        text: '-12.96%',
+        variant: "big"
     },
 };
