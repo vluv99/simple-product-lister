@@ -3,15 +3,17 @@ import Image from "next/image";
 import {Pill} from "@/components/pill/pill";
 import {StaticImport} from "next/dist/shared/lib/get-img-props";
 import {Button} from "@/components/button/button";
+import Link from "next/link";
 
 type Props = {
+    id: number;
     thumbnailURL: string | StaticImport;
     discountValue?: number| undefined;
     title: string;
     price: number;
     description: string;
 }
-export const Card:FC<Props> = ({thumbnailURL, discountValue = undefined, title, price, description}) => {
+export const Card:FC<Props> = ({id, thumbnailURL, discountValue = undefined, title, price, description}) => {
     const titleRowStyle = 'text-[20px] font-semibold';
     return (
         <div className='flex flex-col gap-2 p-3 border-1 border-[#DBDBDB] bg-white rounded-lg w-full md:max-w-100 lg:max-w-80'>
@@ -29,7 +31,9 @@ export const Card:FC<Props> = ({thumbnailURL, discountValue = undefined, title, 
 
             </div>
             <div className='py-2'>
-                <Button label='See details' />
+                <Link href={`/product/${id}`}>
+                    <Button label='See details' />
+                </Link>
             </div>
         </div>
     );
