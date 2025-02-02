@@ -10,10 +10,13 @@ export const getProducts = async (skip: number = 0, limit: number = 10) => {
     try {
         const url = `http://${baseURL}/api/products?skip=${skip}&limit=${limit}`;
         const response = await fetch(url)
-        const res =  (await response.json()) as {
-            data: ProductListingItemDTO[]
-        };
-        return res.data;
+        if (response.status === 200) {
+            const res =  (await response.json()) as {
+                data: ProductListingItemDTO[]
+            };
+            return res.data;
+        }
+        return undefined;
     } catch (error: unknown) {
         console.log(error)
         throw new Error(`An error happened: ${error}`)

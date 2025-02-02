@@ -27,7 +27,7 @@ export const complexDummyData: ProductData[] = [
         description: `Description for product ${i + 1}, featuring premium quality and design.`,
         price: Math.floor(Math.random() * 1500) + 100,
         stock: i % 5 === 0 ? null : Math.floor(Math.random() * 100) + 1,
-        brand: i % 4 === 0 ? 'Microsoft' : i % 4 === 1 ? 'Apple' : i % 4 === 2 ? 'Gucci' : 'Samsung',
+        brand: ['Microsoft', 'Apple', 'Gucci', 'Samsung'][i % 4],
         category: ['Electronics', 'Accessories', 'Perfumes', 'Laptops'][i % 4]
     }))
 ]
