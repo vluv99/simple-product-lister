@@ -1,7 +1,5 @@
 // DTO = data transfer object types used by backend and frontend
 
-import {Prisma, PrismaClient, Product} from "@prisma/client";
-
 export type ProductListingItemDTO = {
     id: number;
     thumbnailURL: string;
@@ -24,9 +22,12 @@ export type ProductDTO = {
     category: string | null
 }
 
+// prisma didn't provide any specific type for the query result
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function productDTOfromDatabase(db_data:any): ProductDTO{
     return {
         id: db_data.id,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         thumbnailURLs: db_data.thumbnailURLs.map((t:any) => t.url),
         discountValue: db_data.discountValue?.toNumber() ?? null,
         title: db_data.title,

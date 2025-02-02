@@ -1,8 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import {complexDummyData} from "@/util/dummyData";
 import {ProductListingItemDTO} from "@/util/dtoTypes";
 import {imgNotFound, INIT_MAX_COUNT} from "@/util/consts";
-import { PrismaClient } from '@prisma/client';
 import {withConnection} from "@/util/prisma-utils";
 
 // TODO: these API requests are redundant since the whole rendering is mainly handled server side in App Router
