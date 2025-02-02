@@ -25,7 +25,7 @@ export const Rating:FC<Props> = ({value}) => {
             <div className='flex flex-row gap-1'>
                 {stars.map((color, i) => <StarIcon color={color} key={`star-${i}`}/>)}
             </div>
-            <div className='text-[24px] font-semibold text-[#000000]'>{value}</div>
+            <div className='text-[24px] font-semibold text-[#000000]'>{value.toFixed(2)}</div>
         </div>
     );
 };

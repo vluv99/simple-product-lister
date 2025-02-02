@@ -9,12 +9,12 @@ import {CustomImage} from "@/components/custom-image/custom-image";
 type Props = {
     id: number;
     thumbnailURL: string | StaticImport;
-    discountValue?: number| undefined;
+    discountValue: number| null;
     title: string;
     price: number;
     description: string;
 }
-export const ProductCard:FC<Props> = ({id, thumbnailURL, discountValue = undefined, title, price, description}) => {
+export const ProductCard:FC<Props> = ({id, thumbnailURL, discountValue = null, title, price, description}) => {
     const titleRowStyle = 'text-[20px] font-semibold';
     return (
         <div className='flex flex-col gap-2 p-3 border-1 border-[#DBDBDB] bg-white rounded-lg w-full md:max-w-100 lg:max-w-80'>

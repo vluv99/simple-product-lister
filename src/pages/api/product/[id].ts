@@ -1,23 +1,13 @@
 import type {NextApiRequest, NextApiResponse} from "next";
 import {complexDummyData} from "@/util/dummyData";
+import {ProductDTO} from "@/util/dtoTypes";
 
-function getProductData(id: number) {
+function getProductData(id: number): ProductDTO | undefined {
     return complexDummyData.find((product) => product.id === id);
 }
 
 type ResponseData = {
-    data:{
-        id: number,
-        thumbnailURLs: string[],
-        discountValue: number | null,
-        title: string,
-        rating: number,
-        description: string,
-        price: number,
-        stock: number | null,
-        brand: string | null,
-        category: string
-    }
+    data: ProductDTO
 } | {
     message: string
 }

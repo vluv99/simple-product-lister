@@ -4,12 +4,11 @@ import {Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, Caro
 import {StaticImport} from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import {CustomImage} from "@/components/custom-image/custom-image";
+import {imgNotFound} from "@/util/consts";
 
 type Props = {
     urls: Array<string | StaticImport>;
 }
-
-const imgNotFound = '/imgs/image-not-found.png';
 
 export const CustomCarousel:FC<Props> = ({urls}) => {
     const [api, setApi] = useState<CarouselApi>()

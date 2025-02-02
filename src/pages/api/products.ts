@@ -1,22 +1,26 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import {dummyData} from "@/util/dummyData";
+import {complexDummyData} from "@/util/dummyData";
+import {ProductListingItemDTO} from "@/util/dtoTypes";
+import {imgNotFound} from "@/util/consts";
 
 // TODO: these API requests are redundant since the whole rendering is mainly handled server side in App Router
 // For the sake of the request, here's the implemented REST API version
 
-function getProductsData(skip: number, limit: number) {
-    return dummyData.slice(skip, skip+limit);
+function getProductsData(skip: number, limit: number):ProductListingItemDTO[] {
+    return complexDummyData.slice(skip, skip+limit).map(p => {
+        return {
+            id: p.id,
+            thumbnailURL: p.thumbnailURLs.length > 0 ? p.thumbnailURLs[0] : imgNotFound,
+            discountValue: p.discountValue,
+            title: p.title,
+            price: p.price,
+            description: p.description
+        }
+    })
 }
 
 type ResponseData = {
-    data:{
-        id: number,
-        thumbnailURL: string,
-        discountValue: number | null,
-        title: string,
-        price: number,
-        description: string,
-    }[]
+    data: ProductListingItemDTO[]
 }
 
 export default function handler(
