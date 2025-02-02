@@ -1,46 +1,86 @@
 import {StaticImport} from "next/dist/shared/lib/get-img-props";
 
-type Data = {
+type simpleData = {
     id: number;
-    thumbnailURL: string | StaticImport;
-    discountValue?: number| undefined;
+    thumbnailURL: string;
+    discountValue: number | null,
     title: string;
     price: number;
     description: string;
 }
-export const dummyData: Data[] = [
+export const dummyData: simpleData[] = [
     {
         id: 1,
         thumbnailURL: '/imgs/iphone9.png',
-        discountValue: 12.96,
+        discountValue: 10,
         title: 'iPhone 9',
-        price: 549,
-        description: 'An apple mobile which is nothing like apple'
+        price: 499,
+        description: 'An affordable yet powerful iPhone with A13 Bionic chip and excellent camera.'
     },
     {
         id: 2,
         thumbnailURL: '/imgs/phones.png',
-        discountValue: 17.94,
-        title: 'iPhone X',
-        price: 899,
-        description: 'SIM-Free, Model A19211 6.5-inch Super Retina HD display with with OLED technology A12 Bionic chip.'
+        discountValue: null,
+        title: 'Android Phone Bundle',
+        price: 799,
+        description: 'A bundle of the latest Android smartphones with top-tier features and design.'
     },
     {
         id: 3,
         thumbnailURL: '/imgs/surfaceLaptop4.png',
-        discountValue: 10.23,
-        title: 'Microsoft Surface Laptop 4',
-        price: 1499,
-        description: 'Style and speed. Stand out on HD video calls backed by Studio Mics.'
+        discountValue: 15,
+        title: 'Surface Laptop 4',
+        price: 1299,
+        description: 'A sleek and powerful laptop with a high-resolution touchscreen and long battery life.'
     },
     {
         id: 4,
         thumbnailURL: '/imgs/brownPerfume.png',
-        discountValue: 15.66,
-        title: 'Brown Perfume',
-        price: 40,
-        description: 'An apple mobile which is nothing like apple'
-    }
+        discountValue: 5,
+        title: 'Luxury Brown Perfume',
+        price: 120,
+        description: 'A premium perfume with an elegant, long-lasting scent perfect for any occasion.'
+    },
+    ...Array.from({ length: 30 }, (_, i) => ({
+        id: 17 + i,
+        thumbnailURL: ['/imgs/iphone9.png', '/imgs/phones.png', '/imgs/surfaceLaptop4.png', '/imgs/brownPerfume.png'][i % 4],
+        discountValue: i % 3 === 0 ? Math.floor(Math.random() * 20) + 5 : null,
+        title: `Product ${17 + i}`,
+        price: Math.floor(Math.random() * 1500) + 100,
+        description: `Description for product ${17 + i}, featuring premium quality and design.`
+    }))
+]
+
+type complexData = {
+    id: number,
+    thumbnailURLs: string[],
+    discountValue: number | null,
+    title: string,
+    rating: number,
+    description: string,
+    price: number,
+    stock: number | null,
+    brand: string | null,
+    category: string
+}
+export const complexDummyData: complexData[] = [
+    ...Array.from({ length: 40 }, (_, i) => ({
+        id: i + 1,
+        thumbnailURLs: [
+            ['/imgs/iphone9.png', '/imgs/phones.png'],
+            ['/imgs/surfaceLaptop4.png', '/imgs/brownPerfume.png'],
+            ['/imgs/iphone9.png', '/imgs/surfaceLaptop4.png'],
+            ['/imgs/phones.png', '/imgs/brownPerfume.png']
+        ][i % 4],
+        discountValue: i % 3 === 0 ? Math.floor(Math.random() * 20) + 5 : null,
+        title: `Product ${i + 1}`,
+        rating: (Math.random() * 5),
+        description: `Description for product ${i + 1}, featuring premium quality and design.`,
+        price: Math.floor(Math.random() * 1500) + 100,
+        stock: i % 5 === 0 ? null : Math.floor(Math.random() * 100) + 1,
+        brand: i % 4 === 0 ? 'Brand A' : i % 4 === 1 ? 'Brand B' : i % 4 === 2 ? 'Brand C' : null,
+        category: ['Electronics', 'Accessories', 'Perfumes', 'Laptops'][i % 4]
+    }))
 ]
 
 export const carouselTest: string[] = [
