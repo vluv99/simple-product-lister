@@ -7,7 +7,7 @@ export enum Colors {
 
 type Props = {
     color: Colors;
-    width?: Number;
+    width?: number;
 }
 export const StarIcon: FC<Props> = ({color, width = 24}) => {
     return (

@@ -7,8 +7,9 @@ import {getSingleProduct} from "@/lib/requests";
 import {FC} from "react";
 import {ProductDTO} from "@/util/dtoTypes";
 
-const ProductPage = async ({ params }: { params: { id: string } }) => {
-    const product = await getSingleProduct(Number(params.id));
+const ProductPage = async ({params}: {params: Promise<{ id: string }>}) => {
+    const { id } = await params;
+    const product = await getSingleProduct(Number(id));
 
     return <ProductContent product={product} />
 };

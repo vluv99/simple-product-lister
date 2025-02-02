@@ -1,5 +1,4 @@
 import {FC} from "react";
-import Image from "next/image";
 import {Pill} from "@/components/pill/pill";
 import {StaticImport} from "next/dist/shared/lib/get-img-props";
 import {Button} from "@/components/button/button";

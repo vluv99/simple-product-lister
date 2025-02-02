@@ -2,7 +2,6 @@
 import {FC, useEffect, useState} from "react";
 import {Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "../ui/carousel";
 import {StaticImport} from "next/dist/shared/lib/get-img-props";
-import Image from "next/image";
 import {CustomImage} from "@/components/custom-image/custom-image";
 import {imgNotFound} from "@/util/consts";
 

@@ -8,7 +8,7 @@ const Home = async () => {
     return (
         <>
             <Header title='See Products'/>
-            <ProductsList initialProducts={initialProducts} />
+            <ProductsList initialProducts={initialProducts ?? []} />
         </>
     );
 }

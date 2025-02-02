@@ -1,7 +1,7 @@
 import {FC} from "react";
 
 type Props = {
-    title?: any | undefined;
+    title?: string | undefined;
 }
 export const Header:FC<Props> = ({title}) => {
     return (
