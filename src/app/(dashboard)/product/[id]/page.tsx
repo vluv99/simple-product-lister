@@ -1,14 +1,14 @@
-import Image from "next/image";
 import {Rating} from "@/components/rating/rating";
 import {Pill} from "@/components/pill/pill";
 import {Button} from "@/components/button/button";
+import {CustomCarousel} from "@/components/custom-carousel/custom-carousel";
+import {carouselTest} from "@/util/dummyData";
 
 const ProductPage = () => {
     return (
         <div className='flex justify-center gap-10 mt-[20%] mx-1 md:mx-3 flex-col md:flex-row items-center md:items-start'>
             <div className='w-fullw md:w-[50%]'>
-                <Image src='/imgs/iphone9.png' alt='product image' className='rounded-lg object-cover w-full h-[30rem]'
-                       width={0} height={0} sizes={'100%'}/>
+                <CustomCarousel urls={carouselTest}/>
             </div>
             <div className='w-fullw md:w-[50%] flex flex-col gap-2'>
                 <div className='flex justify-between items-center'>

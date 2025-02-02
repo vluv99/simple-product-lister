@@ -46,5 +46,6 @@ export const dummyData: Data[] = [
 export const carouselTest: string[] = [
     '/imgs/iphone9.png',
     '/imgs/phones.png',
-    '/imgs/iphone9.png'
+    '/imgs/surfaceLaptop4.png',
+    '/imgs/brownPerfume.png',
 ]
