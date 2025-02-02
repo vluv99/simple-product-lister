@@ -30,7 +30,6 @@ export const getSingleProduct = async (id: number) => {
 
     try {
         const url = `http://${baseURL}/api/product/${id}`;
-        console.log(url);
         const response = await fetch(url)
         const res =  (await response.json()) as {
             data: ProductDTO
