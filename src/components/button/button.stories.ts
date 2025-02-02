@@ -11,6 +11,7 @@ const meta = {
     tags: ['autodocs'],
     argTypes: {
         label: {control: 'text'},
+        variant: {control: 'text'},
     },
     args: { },
 } satisfies Meta<typeof Button>;
@@ -18,8 +19,15 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
     args: {
         label: 'See details',
+    },
+};
+
+export const Big: Story = {
+    args: {
+        label: 'Add to cart',
+        variant: "big"
     },
 };
